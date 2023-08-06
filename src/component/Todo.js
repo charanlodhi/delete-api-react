@@ -8,13 +8,13 @@ function Todo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`https://jsonplaceholder.typicode.com/posts/${tasks}`, tasks)
-    .then((response) =>{
-        console.log(response)
-        setTasks(tasks)
-    }).catch((error) =>{
-        console.log(error)
-    })
+    // axios.post(`https://jsonplaceholder.typicode.com/posts/${tasks}`, tasks)
+    // .then((response) =>{
+    //     console.log(response)
+    //     setTasks(tasks)
+    // }).catch((error) =>{
+    //     console.log(error)
+    // })
     if (task.trim() === "") return; // Don't add empty tasks
 
     const newTask = {
@@ -53,7 +53,7 @@ function Todo() {
       <h1>Todos</h1>
       <form onSubmit={handleSubmit}>
         <div className="formField">
-          <label>Task Name</label>
+          <label data-testid="taskname">Task Name</label>
           <input type="text" value={task} onChange={handleTaskChange} />
         </div>
         <div className="formField">
